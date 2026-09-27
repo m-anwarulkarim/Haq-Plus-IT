@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Globe, Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Globe, Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: React.FC = () => {
@@ -23,10 +23,6 @@ export const Navbar: React.FC = () => {
     { href: '#faq', labelBn: 'প্রশ্নোত্তর', labelEn: 'FAQ' },
     { href: '#contact', labelBn: 'যোগাযোগ', labelEn: 'Contact' },
   ];
-
-  const handlePhoneClick = () => {
-    window.open('tel:01602867954', '_self');
-  };
 
   return (
     <header
@@ -92,15 +88,6 @@ export const Navbar: React.FC = () => {
               <span>{lang === 'bn' ? 'English' : 'বাংলা'}</span>
             </button>
 
-            {/* Direct Call Button */}
-            <button
-              onClick={handlePhoneClick}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 hover:border-emerald-500/60 text-xs font-semibold text-slate-200 hover:text-emerald-400 transition-all whitespace-nowrap"
-            >
-              <Phone className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-              <span className="font-mono text-emerald-300">01602867954</span>
-            </button>
-
             {/* Get Quote / Order CTA */}
             <a
               href="#pricing"
@@ -119,14 +106,6 @@ export const Navbar: React.FC = () => {
             >
               {lang === 'bn' ? 'EN' : 'বাং'}
             </button>
-            
-            <a
-              href="tel:01602867954"
-              className="md:hidden p-2 rounded-xl bg-slate-900 border border-emerald-500/40 text-emerald-400"
-              title="Call Hotline"
-            >
-              <Phone className="w-4 h-4 animate-pulse" />
-            </a>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -157,17 +136,6 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
-            <button
-              onClick={() => {
-                handlePhoneClick();
-                setMobileMenuOpen(false);
-              }}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 border border-emerald-500/40 text-emerald-400 font-mono font-bold text-sm"
-            >
-              <Phone className="w-4 h-4" />
-              <span>কল করুন: 01602867954</span>
-            </button>
-
             <a
               href="https://wa.me/8801602867954"
               target="_blank"

@@ -74,24 +74,26 @@ export const WhyUs: React.FC = () => {
           </p>
         </div>
 
-        {/* Feature Grid */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Feature Grid - 2 CARDS PER ROW ON MOBILE */}
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
           {reasons.map((reason, index) => {
             const Icon = reason.icon;
             return (
               <div
                 key={index}
-                className="p-6 sm:p-8 rounded-3xl glass-panel hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 group border border-slate-800"
+                className="p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl glass-panel hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 group border border-slate-800 flex flex-col justify-between"
               >
-                <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
-                  <Icon className="w-6 h-6" />
+                <div>
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-3 sm:mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </div>
+                  <h3 className="text-xs sm:text-base lg:text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-1.5 sm:mb-2 leading-snug">
+                    {t(reason.titleBn, reason.titleEn)}
+                  </h3>
+                  <p className="text-[10px] sm:text-xs lg:text-sm text-slate-300 leading-normal sm:leading-relaxed">
+                    {t(reason.descBn, reason.descEn)}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors mb-2">
-                  {t(reason.titleBn, reason.titleEn)}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  {t(reason.descBn, reason.descEn)}
-                </p>
               </div>
             );
           })}
