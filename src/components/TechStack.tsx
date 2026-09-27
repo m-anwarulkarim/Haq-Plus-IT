@@ -1,6 +1,8 @@
 import React from 'react';
 import { Cpu } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { Badge } from './ui/badge';
+import { Card, CardContent } from './ui/card';
 
 export const TechStack: React.FC = () => {
   const { t } = useLanguage();
@@ -23,10 +25,10 @@ export const TechStack: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+          <Badge variant="outline" className="px-3.5 py-1.5 rounded-full bg-slate-900 border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider gap-2">
             <Cpu className="w-3.5 h-3.5" />
             <span>{t('আমাদের টেকনোলজি স্ট্যাক', 'Supported Technology Stack')}</span>
-          </div>
+          </Badge>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
             {t('আপনার পছন্দের যেকোনো টেকনোলজিতে ', 'Custom Website Built On Any ')}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
@@ -43,7 +45,7 @@ export const TechStack: React.FC = () => {
 
         <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {techItems.map((tech, idx) => (
-            <div
+            <Card
               key={idx}
               className={`p-5 rounded-2xl border text-center transition-all duration-300 hover:scale-105 ${
                 tech.highlight
@@ -51,15 +53,17 @@ export const TechStack: React.FC = () => {
                   : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
               }`}
             >
-              {tech.highlight && (
-                <span className="inline-block px-2 py-0.5 mb-2 rounded bg-cyan-500 text-slate-950 font-bold text-[9px] uppercase tracking-wider">
-                  Supported
-                </span>
-              )}
-              <h4 className="font-extrabold text-base text-white font-mono">{tech.name}</h4>
-              <p className="text-[11px] text-cyan-400 font-semibold mt-1">{tech.category}</p>
-              <p className="text-[10px] text-slate-400 mt-1 leading-snug">{tech.desc}</p>
-            </div>
+              <CardContent className="p-0">
+                {tech.highlight && (
+                  <Badge variant="secondary" className="px-2 py-0.5 mb-2 rounded bg-cyan-500 text-slate-950 font-bold text-[9px] uppercase tracking-wider border-none">
+                    Supported
+                  </Badge>
+                )}
+                <h4 className="font-extrabold text-base text-white font-mono">{tech.name}</h4>
+                <p className="text-[11px] text-cyan-400 font-semibold mt-1">{tech.category}</p>
+                <p className="text-[10px] text-slate-400 mt-1 leading-snug">{tech.desc}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Check, Sparkles, ShieldCheck, ArrowRight, MessageCircle, Server, Globe, ShieldAlert, ShoppingBag, Layers } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import { Card } from './ui/card';
 
 export const PricingPackages: React.FC = () => {
   const { t } = useLanguage();
@@ -28,10 +30,10 @@ export const PricingPackages: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-cyan-500/40 text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-lg">
+          <Badge variant="outline" className="px-4 py-1.5 rounded-full bg-slate-900 border-cyan-500/40 text-cyan-300 text-xs font-bold uppercase tracking-wider shadow-lg inline-flex items-center gap-2">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
             <span>{t('সেরা অফার ও বাজেট প্রাইসিং', 'Unbeatable Budget Pricing')}</span>
-          </div>
+          </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">
             {t('আপনার বাজেট অনুযায়ী সেরা ', 'Choose The Perfect Package For Your ')}
             <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
@@ -50,10 +52,10 @@ export const PricingPackages: React.FC = () => {
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
           {/* Card 1: Landing Page Plan */}
-          <div className="group rounded-3xl glass-panel p-8 sm:p-10 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-slate-900 text-cyan-400 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl border-l border-b border-slate-800">
+          <Card className="group rounded-3xl glass-panel p-8 sm:p-10 border border-slate-800 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden bg-transparent">
+            <Badge variant="secondary" className="absolute top-0 right-0 bg-slate-900 text-cyan-400 text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-none rounded-bl-2xl border-l border-b border-slate-800">
               Starter Choice
-            </div>
+            </Badge>
 
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -78,7 +80,7 @@ export const PricingPackages: React.FC = () => {
                 </div>
                 <div className="mt-1 flex items-center justify-between text-xs font-medium text-emerald-400 border-t border-slate-800/80 pt-2">
                   <span>🔄 {t('মাসিক চার্জ:', 'Monthly Fee:')} <strong className="font-mono text-white">৳২০০ / মাস</strong></span>
-                  <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">ফ্রি সাবডোমেইন + হোস্টিং</span>
+                  <Badge variant="outline" className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 px-2 py-0.5 text-[10px]">ফ্রি সাবডোমেইন + হোস্টিং</Badge>
                 </div>
               </div>
 
@@ -136,22 +138,22 @@ export const PricingPackages: React.FC = () => {
             </div>
 
             {/* Order Button */}
-            <button
+            <Button
               onClick={() => handleOrderWhatsApp('স্মার্ট ল্যান্ডিং পেজ (Landing Page)', '1,000', '200')}
-              className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-slate-900 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500 text-xs sm:text-sm font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 group/btn shadow-lg"
+              className="w-full py-3.5 sm:py-4 h-auto px-4 rounded-2xl bg-slate-900 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500 text-xs sm:text-sm font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 group/btn shadow-lg"
             >
               <MessageCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
               <span className="whitespace-nowrap">{t('ল্যান্ডিং পেজ অর্ডার করুন', 'Order Landing Page')}</span>
               <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform flex-shrink-0" />
-            </button>
+            </Button>
 
-          </div>
+          </Card>
 
           {/* Card 2: Full Website Plan (Recommended) */}
-          <div className="group rounded-3xl glass-panel-glow p-8 sm:p-10 border-2 border-cyan-500/60 hover:border-cyan-400 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 text-[10px] font-black uppercase tracking-widest px-5 py-1.5 rounded-bl-2xl shadow-md">
+          <Card className="group rounded-3xl glass-panel-glow p-8 sm:p-10 border-2 border-cyan-500/60 hover:border-cyan-400 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden shadow-2xl bg-transparent">
+            <Badge className="absolute top-0 right-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 text-[10px] font-black uppercase tracking-widest px-5 py-1.5 rounded-none rounded-bl-2xl shadow-md border-none">
               🔥 Most Popular / Best Value
-            </div>
+            </Badge>
 
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -176,7 +178,7 @@ export const PricingPackages: React.FC = () => {
                 </div>
                 <div className="mt-1 flex items-center justify-between text-xs font-medium text-emerald-400 border-t border-slate-800 pt-2">
                   <span>🔄 {t('মাসিক চার্জ:', 'Monthly Fee:')} <strong className="font-mono text-white">৳২০০ / মাস</strong></span>
-                  <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">ফ্রি সাবডোমেইন + হোস্টিং</span>
+                  <Badge variant="outline" className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30 px-2 py-0.5 text-[10px]">ফ্রি সাবডোমেইন + হোস্টিং</Badge>
                 </div>
               </div>
 
@@ -244,16 +246,16 @@ export const PricingPackages: React.FC = () => {
             </div>
 
             {/* Order Button */}
-            <button
+            <Button
               onClick={() => handleOrderWhatsApp('ফুল ই-কমার্স / বিজনেসব্যাপী ওয়েবসাইট', '10,000', '200')}
-              className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-bold text-xs sm:text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group/btn"
+              className="w-full py-3.5 sm:py-4 h-auto px-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-bold text-xs sm:text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group/btn border-none"
             >
               <MessageCircle className="w-4 h-4 fill-slate-950 flex-shrink-0 text-slate-950" />
               <span className="whitespace-nowrap">{t('ফুল ওয়েবসাইট অর্ডার করুন', 'Order Full Website')}</span>
               <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform flex-shrink-0" />
-            </button>
+            </Button>
 
-          </div>
+          </Card>
 
         </div>
 

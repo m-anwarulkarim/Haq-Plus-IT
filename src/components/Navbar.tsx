@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Globe, Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { Badge } from './ui/badge';
+import { Button } from './ui/button';
 
 export const Navbar: React.FC = () => {
   const { lang, toggleLang, t } = useLanguage();
@@ -53,9 +55,9 @@ export const Navbar: React.FC = () => {
                 <span className="text-base sm:text-lg font-black tracking-tight bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent font-['Outfit']">
                   HHAQ PLUS IT
                 </span>
-                <span className="text-[9px] uppercase font-extrabold tracking-wider px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                <Badge variant="secondary" className="text-[9px] uppercase font-extrabold tracking-wider px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
                   Tech
-                </span>
+                </Badge>
               </div>
               <p className="text-[9px] sm:text-[10px] text-slate-400 tracking-wider font-medium">
                 {t('ওয়েবসাইট & ল্যান্ডিং পেজ', 'Websites & Landing Pages')}
@@ -63,7 +65,7 @@ export const Navbar: React.FC = () => {
             </div>
           </a>
 
-          {/* Desktop Navigation Capsule - whitespace-nowrap prevents line wrapping */}
+          {/* Desktop Navigation Capsule */}
           <nav className="hidden xl:flex items-center gap-1 bg-slate-900/70 p-1.5 rounded-full border border-slate-800 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
@@ -79,41 +81,46 @@ export const Navbar: React.FC = () => {
           {/* Right Action Controls */}
           <div className="hidden md:flex items-center gap-2.5 flex-shrink-0">
             {/* Language Switcher */}
-            <button
+            <Button
               onClick={toggleLang}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 hover:border-cyan-500/50 text-xs font-semibold text-slate-200 hover:text-cyan-400 transition-all whitespace-nowrap"
+              variant="outline"
+              className="flex items-center gap-1.5 px-3 py-1.5 h-auto rounded-full bg-slate-900 border-slate-700 hover:border-cyan-500/50 text-xs font-semibold text-slate-200 hover:text-cyan-400 transition-all whitespace-nowrap"
               title="Change Language"
             >
               <Globe className="w-3.5 h-3.5 text-cyan-400" />
               <span>{lang === 'bn' ? 'English' : 'বাংলা'}</span>
-            </button>
+            </Button>
 
             {/* Get Quote / Order CTA */}
-            <a
-              href="#pricing"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 hover:from-cyan-400 hover:to-emerald-300 text-xs font-extrabold text-slate-950 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
+            <Button
+              asChild
+              className="flex items-center gap-1.5 px-4 py-2 h-auto rounded-full bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 hover:from-cyan-400 hover:to-emerald-300 text-xs font-extrabold text-slate-950 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all whitespace-nowrap border-none"
             >
-              <span>{t('অর্ডার করুন', 'Order Now')}</span>
-              <ArrowUpRight className="w-4 h-4 stroke-[3]" />
-            </a>
+              <a href="#pricing">
+                <span>{t('অর্ডার করুন', 'Order Now')}</span>
+                <ArrowUpRight className="w-4 h-4 stroke-[3]" />
+              </a>
+            </Button>
           </div>
 
           {/* Mobile & Tablet Toggle Buttons */}
           <div className="flex xl:hidden items-center gap-2 flex-shrink-0">
-            <button
+            <Button
               onClick={toggleLang}
-              className="px-2.5 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs font-extrabold text-cyan-400"
+              variant="outline"
+              className="px-2.5 py-1.5 h-auto rounded-xl bg-slate-900 border-slate-800 text-xs font-extrabold text-cyan-400"
             >
               {lang === 'bn' ? 'EN' : 'বাং'}
-            </button>
+            </Button>
 
-            <button
+            <Button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white hover:border-cyan-500/40 transition-all"
+              variant="outline"
+              className="p-2.5 h-auto rounded-xl bg-slate-900 border-slate-800 text-slate-200 hover:text-white hover:border-cyan-500/40 transition-all"
               aria-label="Toggle Menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
+            </Button>
           </div>
 
         </div>
@@ -136,25 +143,33 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
-            <a
-              href="https://wa.me/8801602867954"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg glow-whatsapp"
+            <Button
+              asChild
+              className="w-full py-3 h-auto rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg glow-whatsapp border-none"
             >
-              <MessageCircle className="w-4 h-4 fill-white text-emerald-600" />
-              <span>হোয়াটসঅ্যাপ মেসেজ (01602867954)</span>
-            </a>
+              <a
+                href="https://wa.me/8801602867954"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <MessageCircle className="w-4 h-4 fill-white text-emerald-600" />
+                <span>হোয়াটসঅ্যাপ মেসেজ (01602867954)</span>
+              </a>
+            </Button>
 
-            <a
-              href="#pricing"
-              onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 text-slate-950 font-black text-sm shadow-xl"
+            <Button
+              asChild
+              className="w-full py-3.5 h-auto rounded-xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 text-slate-950 font-black text-sm shadow-xl border-none"
             >
-              <span>{t('ওয়েবসাইট ও ল্যান্ডিং পেজ অর্ডার করুন', 'Order Website / Landing Page')}</span>
-              <ArrowUpRight className="w-4 h-4 stroke-[3]" />
-            </a>
+              <a
+                href="#pricing"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>{t('ওয়েবসাইট ও ল্যান্ডিং পেজ অর্ডার করুন', 'Order Website / Landing Page')}</span>
+                <ArrowUpRight className="w-4 h-4 stroke-[3]" />
+              </a>
+            </Button>
           </div>
         </div>
       )}

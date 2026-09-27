@@ -1,24 +1,14 @@
-import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
+import { createRootRoute, createRouter } from '@tanstack/react-router';
 import { App } from './App';
 
-// Root Route
+// Root Route rendering App
 const rootRoute = createRootRoute({
-  component: () => <Outlet />,
-});
-
-// Index Route for Landing Page
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
   component: App,
 });
 
-// Create Route Tree
-const routeTree = rootRoute.addChildren([indexRoute]);
-
 // Create Router instance
 export const router = createRouter({
-  routeTree,
+  routeTree: rootRoute,
   defaultPreload: 'intent',
 });
 
