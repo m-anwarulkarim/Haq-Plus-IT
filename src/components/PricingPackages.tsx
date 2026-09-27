@@ -138,11 +138,11 @@ export const PricingPackages: React.FC = () => {
             {/* Order Button */}
             <button
               onClick={() => handleOrderWhatsApp('স্মার্ট ল্যান্ডিং পেজ (Landing Page)', '1,000', '200')}
-              className="w-full py-4 rounded-2xl bg-slate-900 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500 text-xs font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 group/btn shadow-lg"
+              className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-slate-900 hover:bg-cyan-950/60 border border-slate-700 hover:border-cyan-500 text-xs sm:text-sm font-bold text-cyan-300 transition-all flex items-center justify-center gap-2 group/btn shadow-lg"
             >
-              <MessageCircle className="w-4 h-4 text-cyan-400" />
-              <span>{t('ল্যান্ডিং পেজ অর্ডার করুন (৳১,০০০)', 'Order Landing Page (1,000 BDT)')}</span>
-              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              <MessageCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+              <span className="whitespace-nowrap">{t('ল্যান্ডিং পেজ অর্ডার করুন', 'Order Landing Page')}</span>
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform flex-shrink-0" />
             </button>
 
           </div>
@@ -246,11 +246,11 @@ export const PricingPackages: React.FC = () => {
             {/* Order Button */}
             <button
               onClick={() => handleOrderWhatsApp('ফুল ই-কমার্স / বিজনেসব্যাপী ওয়েবসাইট', '10,000', '200')}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-bold text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group/btn"
+              className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-cyan-300 text-slate-950 font-bold text-xs sm:text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group/btn"
             >
-              <MessageCircle className="w-4 h-4 fill-slate-950" />
-              <span>{t('ফুল ওয়েবসাইট অর্ডার করুন (৳১০,০০০)', 'Order Full Website (10,000 BDT)')}</span>
-              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+              <MessageCircle className="w-4 h-4 fill-slate-950 flex-shrink-0 text-slate-950" />
+              <span className="whitespace-nowrap">{t('ফুল ওয়েবসাইট অর্ডার করুন', 'Order Full Website')}</span>
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform flex-shrink-0" />
             </button>
 
           </div>

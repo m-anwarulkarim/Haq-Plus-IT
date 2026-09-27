@@ -29,7 +29,7 @@ export const Services: React.FC = () => {
         '100% Customizable per requirement',
       ],
       technologies: ['React', 'Next.js', 'TanStack', 'PHP', 'Tailwind'],
-      badge: '৳১,০০০ / ল্যান্ডিং পেজ',
+      badge: 'স্মার্ট ল্যান্ডিং পেজ',
     },
     {
       id: 'website',
@@ -56,7 +56,7 @@ export const Services: React.FC = () => {
         'Custom Tech (Laravel/Node/PHP/Python)',
       ],
       technologies: ['Laravel', 'Node.js', 'Next.js', 'PHP', 'Python', 'MySQL'],
-      badge: '🔥 জনপ্রিয় অফার (৳১০,০০০)',
+      badge: '🔥 জনপ্রিয় অফার',
     },
     {
       id: 'webapp',
