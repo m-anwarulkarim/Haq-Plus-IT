@@ -111,11 +111,11 @@ export const Hero: React.FC = () => {
                 onClick={handleWhatsAppHero}
                 className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold text-xs sm:text-sm shadow-xl glow-whatsapp transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 group"
               >
-                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-950/20 flex items-center justify-center">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-slate-950/20 flex items-center justify-center flex-shrink-0">
                   <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-slate-950 text-emerald-500" />
                 </div>
-                <span>{t('হোয়াটসঅ্যাপে মেসেজ দিন (01602867954)', 'Chat on WhatsApp (01602867954)')}</span>
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                <span className="whitespace-nowrap">{t('হোয়াটসঅ্যাপে মেসেজ দিন', 'Chat on WhatsApp')}</span>
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform flex-shrink-0" />
               </button>
 
               {/* Call Us Direct */}

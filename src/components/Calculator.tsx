@@ -223,10 +223,10 @@ export const Calculator: React.FC = () => {
             {/* Direct WhatsApp Order Action Button */}
             <button
               onClick={handleSendToWhatsApp}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-bold text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group"
+              className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-bold text-xs sm:text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group"
             >
-              <Send className="w-4 h-4 stroke-[2.5]" />
-              <span>{t('হোয়াটসঅ্যাপে অর্ডার পাঠান (01602867954)', 'Submit Order to WhatsApp')}</span>
+              <Send className="w-4 h-4 stroke-[2.5] flex-shrink-0" />
+              <span className="whitespace-nowrap">{t('হোয়াটসঅ্যাপে অর্ডার পাঠান', 'Submit Order to WhatsApp')}</span>
             </button>
           </div>
 

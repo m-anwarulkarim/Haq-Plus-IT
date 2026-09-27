@@ -192,11 +192,11 @@ export const ContactForm: React.FC = () => {
                   {/* Main WhatsApp Direct Action Button */}
                   <button
                     onClick={handleOpenWhatsApp}
-                    className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-black text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-3 group"
+                    className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-extrabold text-xs sm:text-sm shadow-xl glow-whatsapp transition-all flex items-center justify-center gap-2 group"
                   >
-                    <MessageCircle className="w-5 h-5 fill-slate-950" />
-                    <span>{t('হোয়াটসঅ্যাপে মেসেজ পাঠান (01602867954)', 'Send Message on WhatsApp (01602867954)')}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform stroke-[3]" />
+                    <MessageCircle className="w-5 h-5 fill-slate-950 flex-shrink-0" />
+                    <span className="whitespace-nowrap">{t('হোয়াটসঅ্যাপে মেসেজ পাঠান', 'Send Message on WhatsApp')}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform stroke-[3] flex-shrink-0" />
                   </button>
 
                   <div className="pt-2">
@@ -291,10 +291,10 @@ export const ContactForm: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-sm shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 group"
+                    className="w-full py-3.5 sm:py-4 px-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-xs sm:text-sm shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center gap-2 group"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{t('সাবমিট করুন ও হোয়াটসঅ্যাপে কানেক্ট হোন (01602867954)', 'Submit & Connect on WhatsApp (01602867954)')}</span>
+                    <Send className="w-4 h-4 flex-shrink-0" />
+                    <span className="whitespace-nowrap">{t('সাবমিট করুন ও হোয়াটসঅ্যাপে কানেক্ট হোন', 'Submit & Connect on WhatsApp')}</span>
                   </button>
                 </form>
               )}
