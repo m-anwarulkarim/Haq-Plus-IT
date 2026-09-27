@@ -70,14 +70,14 @@ export const Footer: React.FC = () => {
           {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-              {t('সার্ভিসসমূহ', 'Core Services')}
+              {t('প্যাকেজসমূহ', 'Our Packages')}
             </h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">TanStack Web Apps</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Mobile App Dev</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Custom Enterprise ERP</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Digital Marketing & SEO</a></li>
-              <li><a href="#services" className="hover:text-cyan-400 transition-colors">Cyber Security & Cloud</a></li>
+              <li><a href="#pricing" className="hover:text-cyan-400 transition-colors">{t('স্মার্ট ল্যান্ডিং পেজ (৳১,০০০)', 'Smart Landing Page')}</a></li>
+              <li><a href="#pricing" className="hover:text-cyan-400 transition-colors">{t('ফুল ওয়েবসাইট (৳১০,০০০)', 'Full Website')}</a></li>
+              <li><a href="#pricing" className="hover:text-cyan-400 transition-colors">{t('কাস্টম ওয়েব অ্যাপ', 'Custom Web App')}</a></li>
+              <li><a href="#calculator" className="hover:text-cyan-400 transition-colors">{t('প্রাইস ক্যালকুলেটর', 'Price Estimator')}</a></li>
+              <li><a href="#contact" className="hover:text-cyan-400 transition-colors">{t('কাস্টম প্রজেক্ট রিকোয়েস্ট', 'Custom Project')}</a></li>
             </ul>
           </div>
 

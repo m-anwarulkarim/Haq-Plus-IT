@@ -17,7 +17,6 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { href: '#pricing', labelBn: 'প্রাইসিং', labelEn: 'Pricing' },
-    { href: '#services', labelBn: 'সার্ভিসসমূহ', labelEn: 'Services' },
     { href: '#why-us', labelBn: 'কেন আমরা', labelEn: 'Why Us' },
     { href: '#calculator', labelBn: 'ক্যালকুলেটর', labelEn: 'Estimator' },
     { href: '#tech-stack', labelBn: 'টেকনোলজি', labelEn: 'Tech Stack' },

@@ -3,7 +3,6 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { PricingPackages } from './components/PricingPackages';
-import { Services } from './components/Services';
 import { Calculator } from './components/Calculator';
 import { WhyUs } from './components/WhyUs';
 import { TechStack } from './components/TechStack';
@@ -23,7 +22,6 @@ export const App: React.FC = () => {
         <main className="flex-grow">
           <Hero />
           <PricingPackages />
-          <Services />
           <WhyUs />
           <Calculator />
           <TechStack />
