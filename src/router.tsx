@@ -1,9 +1,9 @@
-import { createRootRoute, createRoute, createRouter } from '@tanstack/react-router';
+import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 import { App } from './App';
 
 // Root Route
 const rootRoute = createRootRoute({
-  component: App,
+  component: () => <Outlet />,
 });
 
 // Index Route for Landing Page
