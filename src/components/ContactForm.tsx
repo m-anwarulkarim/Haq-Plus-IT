@@ -8,6 +8,8 @@ import { Card, CardContent } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
+import { trackMetaEvent } from '../lib/metaPixel';
+
 export const ContactForm: React.FC = () => {
   const { t } = useLanguage();
 
@@ -42,9 +44,15 @@ export const ContactForm: React.FC = () => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
 
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Lead', { content_name: formData.service });
-    }
+    trackMetaEvent({
+      eventName: 'Lead',
+      customData: { content_name: formData.service },
+      userData: {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+      },
+    });
 
     // Trigger celebratory confetti
     confetti({
