@@ -87,19 +87,19 @@ export const Hero: React.FC = () => {
               )}
             </p>
 
-            {/* Direct Feature Bullets */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2 max-w-xl mx-auto lg:mx-0 text-xs font-semibold text-slate-200">
-              <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-                <Layers className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                <span>{t('ল্যান্ডিং পেজ (৳১,০০০)', 'Landing Page (1k BDT)')}</span>
+            {/* Direct Feature Bullets - 1 HORIZONTAL ROW ON MOBILE */}
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-3 pt-2 max-w-xl mx-auto lg:mx-0 text-[10px] sm:text-xs font-bold text-slate-200">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-1 sm:gap-2 bg-slate-900/60 px-1 sm:px-3 py-2 sm:py-2.5 rounded-xl border border-slate-800 text-center sm:text-left">
+                <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 flex-shrink-0" />
+                <span className="truncate">{t('ল্যান্ডিং পেজ (৳১,০০০)', 'Landing Page (1k)')}</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-                <ShoppingBag className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>{t('ফুল ওয়েবসাইট (৳১০,০০০)', 'Full Website (10k BDT)')}</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-1 sm:gap-2 bg-slate-900/60 px-1 sm:px-3 py-2 sm:py-2.5 rounded-xl border border-slate-800 text-center sm:text-left">
+                <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" />
+                <span className="truncate">{t('ফুল ওয়েবসাইট (৳১০,০০০)', 'Full Website (10k)')}</span>
               </div>
-              <div className="flex items-center justify-center lg:justify-start gap-2 bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
-                <Code2 className="w-4 h-4 text-indigo-400 flex-shrink-0" />
-                <span>{t('কাস্টম ওয়েব অ্যাপ', 'Custom Web App')}</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-1 sm:gap-2 bg-slate-900/60 px-1 sm:px-3 py-2 sm:py-2.5 rounded-xl border border-slate-800 text-center sm:text-left">
+                <Code2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-400 flex-shrink-0" />
+                <span className="truncate">{t('কাস্টম ওয়েব অ্যাপ', 'Custom Web App')}</span>
               </div>
             </div>
 
