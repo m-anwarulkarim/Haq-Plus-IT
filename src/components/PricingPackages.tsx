@@ -9,6 +9,10 @@ export const PricingPackages: React.FC = () => {
   const { t } = useLanguage();
 
   const handleOrderWhatsApp = (planName: string, setupPrice: string, monthlyPrice: string) => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', { content_name: planName, value: setupPrice, currency: 'BDT' });
+    }
+
     const text = `হ্যালো Hhaq Plus IT! আমি আপনার "${planName}" প্যাকেজটি অর্ডার করতে চাই।
 
 📌 প্যাকেজ: ${planName}

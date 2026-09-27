@@ -42,6 +42,10 @@ export const ContactForm: React.FC = () => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
 
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', { content_name: formData.service });
+    }
+
     // Trigger celebratory confetti
     confetti({
       particleCount: 100,
