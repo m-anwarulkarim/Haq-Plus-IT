@@ -126,53 +126,77 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile & Tablet Drawer */}
+      {/* Mobile & Tablet Overlay */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-slate-950/98 backdrop-blur-2xl border-b border-slate-800/90 px-4 pt-4 pb-6 mt-2 space-y-4 shadow-2xl animate-fadeIn max-h-[85vh] overflow-y-auto">
-          <div className="grid grid-cols-2 gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-3 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900/60 hover:bg-cyan-950/50 hover:text-cyan-300 border border-slate-800/80 transition-all"
-              >
-                {t(link.labelBn, link.labelEn)}
-              </a>
-            ))}
-          </div>
-
-          <div className="pt-3 border-t border-slate-800/80 flex flex-col gap-2.5">
-            <Button
-              asChild
-              className="w-full py-3 h-auto rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg glow-whatsapp border-none"
-            >
-              <a
-                href="https://wa.me/8801602867954"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <MessageCircle className="w-4 h-4 fill-white text-emerald-600" />
-                <span>হোয়াটসঅ্যাপ মেসেজ (01602867954)</span>
-              </a>
-            </Button>
-
-            <Button
-              asChild
-              className="w-full py-3.5 h-auto rounded-xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 text-slate-950 font-black text-sm shadow-xl border-none"
-            >
-              <a
-                href="#pricing"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span>{t('ওয়েবসাইট ও ল্যান্ডিং পেজ অর্ডার করুন', 'Order Website / Landing Page')}</span>
-                <ArrowUpRight className="w-4 h-4 stroke-[3]" />
-              </a>
-            </Button>
-          </div>
-        </div>
+        <div 
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm xl:hidden transition-opacity"
+          onClick={() => setMobileMenuOpen(false)}
+        />
       )}
+
+      {/* Mobile & Tablet Sidebar */}
+      <div 
+        className={`fixed top-0 right-0 bottom-0 z-50 w-72 sm:w-80 bg-slate-950/98 backdrop-blur-2xl border-l border-slate-800/90 shadow-2xl p-6 transform transition-transform duration-300 ease-in-out flex flex-col xl:hidden overflow-y-auto ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex items-center justify-between mb-8">
+          <span className="text-lg font-black tracking-tight bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent font-['Outfit']">
+            Menu
+          </span>
+          <Button
+            onClick={() => setMobileMenuOpen(false)}
+            variant="ghost"
+            className="p-2 h-auto rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 border border-transparent hover:border-slate-800 transition-all"
+            aria-label="Close Menu"
+          >
+            <X className="w-5 h-5" />
+          </Button>
+        </div>
+
+        <div className="flex flex-col gap-2 flex-grow">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-3.5 rounded-xl text-sm font-semibold text-slate-200 hover:bg-cyan-950/50 hover:text-cyan-300 border border-transparent hover:border-cyan-900/50 transition-all"
+            >
+              {t(link.labelBn, link.labelEn)}
+            </a>
+          ))}
+        </div>
+
+        <div className="pt-6 mt-6 border-t border-slate-800/80 flex flex-col gap-3 shrink-0">
+          <Button
+            asChild
+            className="w-full py-3 h-auto rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg glow-whatsapp border-none"
+          >
+            <a
+              href="https://wa.me/8801602867954"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <MessageCircle className="w-4 h-4 fill-white text-emerald-600" />
+              <span>হোয়াটসঅ্যাপ মেসেজ</span>
+            </a>
+          </Button>
+
+          <Button
+            asChild
+            className="w-full py-3.5 h-auto rounded-xl bg-gradient-to-r from-cyan-500 via-teal-400 to-emerald-400 hover:from-cyan-400 hover:to-emerald-300 text-slate-950 font-black text-sm shadow-xl hover:shadow-cyan-500/30 transition-all border-none"
+          >
+            <a
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span>{t('অর্ডার করুন', 'Order Now')}</span>
+              <ArrowUpRight className="w-4 h-4 stroke-[3]" />
+            </a>
+          </Button>
+        </div>
+      </div>
     </header>
   );
 };

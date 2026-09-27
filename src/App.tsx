@@ -10,6 +10,7 @@ import { FAQ } from './components/FAQ';
 import { ContactForm } from './components/ContactForm';
 import { Footer } from './components/Footer';
 import { WhatsAppWidget } from './components/WhatsAppWidget';
+import { MobileBottomNav } from './components/MobileBottomNav';
 
 export const App: React.FC = () => {
   return (
@@ -18,8 +19,8 @@ export const App: React.FC = () => {
         {/* Navigation Bar */}
         <Navbar />
 
-        {/* Main Content Sections */}
-        <main className="flex-grow">
+        {/* Main Content Sections (with padding bottom for mobile nav) */}
+        <main className="flex-grow pb-16 md:pb-0">
           <Hero />
           <PricingPackages />
           <WhyUs />
@@ -34,6 +35,9 @@ export const App: React.FC = () => {
 
         {/* Floating Animated WhatsApp Button Widget */}
         <WhatsAppWidget />
+        
+        {/* Mobile Bottom Navigation (Telegram Style) */}
+        <MobileBottomNav />
       </div>
     </LanguageProvider>
   );
